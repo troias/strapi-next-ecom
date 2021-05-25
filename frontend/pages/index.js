@@ -1,11 +1,11 @@
 import Head from "next/head";
-import products from "../products.json";
+import fetch from "node-fetch";
 import styles from "../styles/Home.module.css";
 import { fromImageToUrl, API_URL } from "../utils/urls";
 import { twoDecimals } from '../utils/format'
 import Link from "next/link";
 
-const Home = () => {
+ const Home = ({ products }) => {
   return (
     <div>
       <Head>
@@ -18,18 +18,18 @@ const Home = () => {
         <div key={product.name} className={styles.product}>
           <Link href={`/products/${product.slug}`}>
             <a>
-            <div className={styles.product__Row}>
-              <div className={styles.product__ColImg}>
-                <img
-                  className={styles.product__Im}
-                  src={fromImageToUrl(product.image)}
-                  alt=""
-                />
+              <div className={styles.product__Row}>
+                <div className={styles.product__ColImg}>
+                  <img
+                    className={styles.product__Im}
+                    src={fromImageToUrl(product.image)}
+                    alt=""
+                  />
+                </div>
+                <div className={styles.product__Col}>
+                  {product.name} ${twoDecimals(product.price)}
+                </div>
               </div>
-              <div className={styles.product__Col}>
-                {product.name} ${twoDecimals(product.price)}
-              </div>
-            </div>
             </a>
           </Link>
         </div>
@@ -37,16 +37,20 @@ const Home = () => {
     </div>
   );
 };
-export async function getStaticProps() { 
+
+export const getStaticProps = async () => {
+
+
   const product_res = await fetch(`${API_URL}/products/`)
   const products = await product_res.json()
-  // fetch product
 
-  //return product as props
+ 
+
   return {
     props: {
-      products: products
+      products
     }
   }
 }
-export default Home;
+
+export default Home
