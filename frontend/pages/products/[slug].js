@@ -5,7 +5,10 @@ import { twoDecimals } from '../../utils/format'
 
 
 
-const Product = ({ product }) => {
+const Product = (props) => {
+
+    const { product} = props
+    
     return (
         <div>
             <Head>
@@ -22,8 +25,9 @@ const Product = ({ product }) => {
         </div>
     )
 }
-export const getStaticProps = async ({ params: { slug } }) => {
-    const product_rest = await fetch(`${API_URL}/products/?slug=${slug}`)
+export const getStaticProps = async (context) => {
+    const { params: { slug } } = context
+    const product_rest = await fetch(`${API_URL}/products/?slug=${slug}`) //returns arr
     const foundProduct = await product_rest.json()
 
     return {
