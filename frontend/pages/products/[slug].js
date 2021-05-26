@@ -1,6 +1,6 @@
 
 import Head from "next/head";
-import { fromImageToUrl, API_URL, PUBLIC_API_URL } from "../../utils/urls"
+import { fromImageToUrl, API_URL } from "../../utils/urls"
 import { twoDecimals } from '../../utils/format'
 
 

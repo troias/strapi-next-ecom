@@ -1,5 +1,5 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://172.20.0.2:1337'
-export const PUBLIC_API_URL =process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://host.docker.internal:1337'
+export const PUBLIC_API_URL =process.env.NEXT_PUBLIC_API_URL || 'http://host.docker.internal:1337'
 
 /**
  * Given the image return a url
