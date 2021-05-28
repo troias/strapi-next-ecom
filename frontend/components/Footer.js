@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default () => {
+const Footer = () => {
     return (
         <footer>
             © Troias
@@ -9,3 +9,4 @@ export default () => {
     )
 }
 
+export default Footer

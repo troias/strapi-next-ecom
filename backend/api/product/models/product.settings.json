@@ -41,6 +41,10 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "orders": {
+      "via": "product",
+      "collection": "order"
     }
   }
 }

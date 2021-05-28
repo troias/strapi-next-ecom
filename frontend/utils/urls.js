@@ -1,5 +1,6 @@
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://host.docker.internal:1337'
 export const PUBLIC_API_URL =process.env.NEXT_PUBLIC_API_URL || 'http://host.docker.internal:1337'
+export const MAGIC_PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY || 'pk_test_1BD0CF5FD1A748A8'
 
 /**
  * Given the image return a url
