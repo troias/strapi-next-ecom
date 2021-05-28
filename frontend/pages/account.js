@@ -3,10 +3,9 @@ import { useContext, useState, useEffect } from 'react';
 import { API_URL } from '../utils/urls'
 import Link from 'next/link';
 import AuthContext from '../context/AuthContext'
-import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
 
-const useOrders = (user, getToken) => {
+export const useOrders = (user, getToken) => {
 
     const [orders, setOrders] = useState([])
     const [loading, setLoading] = useState(false)
@@ -65,11 +64,14 @@ const Account = () => {
                  <ClipLoader loading={loading} color={color} />
                 {orders.map(order => (
                     <div key={order.id}>
-                        {new Date(order.created_at).toLocaleDateString('en-En')}
-                        { order.product.name}
-                        { order.total.price}
-                        {order.status}
-
+                        <hr />
+                        Date Ordered: {new Date(order.created_at).toLocaleDateString('en-En')}
+                        <hr />
+                        <h4>{ order.product.name}</h4>
+                        
+                        Order status: {order.status}
+                        <hr/>
+                        <strong> Total Price: ${ order.total}</strong>
                     </div>
                 ))}
             </div>

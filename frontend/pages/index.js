@@ -19,7 +19,6 @@ import Link from "next/link";
           <Link href={`/products/${product.slug}`}>
             <a>
               <div className={styles.product__Row}>
-                test
                 <div className={styles.product__ColImg}>
                   <img
                     className={styles.product__Im}
