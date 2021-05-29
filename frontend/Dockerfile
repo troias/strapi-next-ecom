@@ -2,12 +2,14 @@ FROM node:alpine AS deps
 
 #create directory
 
-RUN mkdir -p /usr/src
+
 ENV PORT 3000
 
 #create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
+
+
 
 #install packages
 

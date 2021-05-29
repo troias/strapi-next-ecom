@@ -10,7 +10,7 @@ services:
 
 
   frontend:
-    image:  frontend
+    image:  strapi-ecom-frontend
     container_name: frontend
     volumes:
       - ./frontend:/usr/src/app
